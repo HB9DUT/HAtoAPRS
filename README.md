@@ -142,24 +142,6 @@ automation:
           entity_id: switch.aprs_hb9xx_9_beaconing
 ```
 
-## Integration icon
-
-Since Home Assistant 2026.3, custom integrations ship their own brand images
-in a `brand/` folder inside the integration directory. The icon source
-(`icon.svg`) and the rendered `icon.png` (256 px), `icon@2x.png` (512 px)
-and the matching `logo*.png` files live in
-[custom_components/aprs_send/brand/](custom_components/aprs_send/brand/) and
-are picked up automatically, no registration in the central brands repository
-needed. On older Home Assistant versions the integration simply shows without
-an icon.
-
-To re-render after editing the SVG:
-
-```
-pip install resvg-py pillow
-python -c "import resvg_py; from PIL import Image; import io; d='custom_components/aprs_send/brand/'; svg=open(d+'icon.svg').read(); [Image.open(io.BytesIO(bytes(resvg_py.svg_to_bytes(svg_string=svg, width=s, height=s)))).save(d+n) for n, s in (('icon.png', 256), ('logo.png', 256), ('icon@2x.png', 512), ('logo@2x.png', 512))]"
-```
-
 ## Packet format
 
 ```
