@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f5fb4"/>
+      <stop offset="1" stop-color="#0b2545"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="512" height="512" rx="104" fill="url(#bg)"/>
+
+  <!-- radio waves, left -->
+  <g fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round">
+    <path d="M252.7 143.6 A44 44 0 0 1 288.4 92.7" opacity="0.95"/>
+    <path d="M221.2 149.2 A76 76 0 0 1 282.8 61.2" opacity="0.7"/>
+    <path d="M189.6 154.7 A108 108 0 0 1 277.2 29.6" opacity="0.45"/>
+  </g>
+  <!-- radio waves, right -->
+  <g fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round">
+    <path d="M303.6 92.7 A44 44 0 0 1 339.3 143.6" opacity="0.95"/>
+    <path d="M309.2 61.2 A76 76 0 0 1 370.8 149.2" opacity="0.7"/>
+    <path d="M314.8 29.6 A108 108 0 0 1 402.4 154.7" opacity="0.45"/>
+  </g>
+
+  <!-- antenna -->
+  <line x1="296" y1="236" x2="296" y2="146" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="296" cy="136" r="13" fill="#ffb703"/>
+
+  <!-- car body -->
+  <path d="M168 300 L196 242 Q201 232 212 232 L304 232 Q315 232 320 242 L352 300 Z" fill="#ffffff"/>
+  <rect x="88" y="296" width="336" height="92" rx="30" fill="#ffffff"/>
+  <!-- windows -->
+  <path d="M188 290 L208 250 L252 250 L252 290 Z" fill="#1b4f9c"/>
+  <path d="M266 290 L266 250 L302 250 L326 290 Z" fill="#1b4f9c"/>
+  <!-- headlight -->
+  <circle cx="404" cy="338" r="11" fill="#ffb703"/>
+
+  <!-- wheels -->
+  <circle cx="176" cy="388" r="42" fill="#0b2545"/>
+  <circle cx="176" cy="388" r="18" fill="#ffffff"/>
+  <circle cx="336" cy="388" r="42" fill="#0b2545"/>
+  <circle cx="336" cy="388" r="18" fill="#ffffff"/>
+</svg>

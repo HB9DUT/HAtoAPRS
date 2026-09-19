@@ -1,0 +1,13 @@
+{
+  "domain": "aprs_send",
+  "name": "APRS Position Sender",
+  "codeowners": ["@HB9DUT"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/HB9DUT/HAtoAPRS",
+  "integration_type": "service",
+  "iot_class": "cloud_push",
+  "issue_tracker": "https://github.com/HB9DUT/HAtoAPRS/issues",
+  "requirements": ["aprslib==0.7.2"],
+  "version": "1.0.0"
+}

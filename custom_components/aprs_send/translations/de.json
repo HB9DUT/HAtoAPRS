@@ -1,0 +1,100 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "APRS Position Sender",
+        "description": "Sendet die Position eines Device Trackers als Positionsmeldung ins APRS-IS-Netz.",
+        "data": {
+          "callsign": "Rufzeichen (mit SSID)",
+          "passcode": "APRS-IS-Passcode",
+          "entity_id": "Device Tracker",
+          "host": "APRS-IS-Server",
+          "port": "APRS-IS-Port",
+          "comment": "Kommentar",
+          "symbol_table": "Symboltabelle",
+          "symbol_code": "Symbolcode",
+          "min_distance_m": "Mindestdistanz (m)",
+          "min_interval_s": "Mindestabstand (s)",
+          "max_interval_s": "Heartbeat-Intervall (s)",
+          "speed_unit": "Geschwindigkeitseinheit des Trackers"
+        },
+        "data_description": {
+          "callsign": "Amateurfunk-Rufzeichen inkl. SSID, z.B. HB9XX-9.",
+          "passcode": "Numerischer APRS-IS-Passcode, der aus dem Rufzeichen berechnet wird.",
+          "entity_id": "Device Tracker, dessen Latitude/Longitude gesendet wird.",
+          "comment": "Freitext, der an die Positionsmeldung angehängt wird (max. 43 Zeichen).",
+          "symbol_table": "Ein Zeichen: '/' für die primäre oder '\\' für die alternative Tabelle.",
+          "symbol_code": "Ein Zeichen, das das Symbol bestimmt, z.B. '>' für Fahrzeug.",
+          "min_distance_m": "Sofort senden, wenn sich der Tracker mindestens so weit bewegt hat.",
+          "min_interval_s": "Nie zwei Meldungen mit kürzerem Abstand senden.",
+          "max_interval_s": "Letzte bekannte Position mindestens so oft senden, auch ohne Bewegung.",
+          "speed_unit": "Einheit des 'speed'-Attributs des Trackers. Home-Assistant-Tracker wie die Companion App verwenden m/s."
+        }
+      }
+    },
+    "error": {
+      "invalid_callsign": "Das Rufzeichen ist nicht gültig aufgebaut (z.B. HB9XX-9).",
+      "invalid_auth": "Der Passcode passt nicht zum Rufzeichen.",
+      "cannot_connect": "Verbindung zum APRS-IS-Server nicht möglich.",
+      "unknown": "Unerwarteter Fehler, Details im Log."
+    },
+    "abort": {
+      "already_configured": "Dieses Rufzeichen ist für diesen Device Tracker bereits eingerichtet."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "APRS Position Sender Optionen",
+        "data": {
+          "host": "APRS-IS-Server",
+          "port": "APRS-IS-Port",
+          "comment": "Kommentar",
+          "symbol_table": "Symboltabelle",
+          "symbol_code": "Symbolcode",
+          "min_distance_m": "Mindestdistanz (m)",
+          "min_interval_s": "Mindestabstand (s)",
+          "max_interval_s": "Heartbeat-Intervall (s)",
+          "speed_unit": "Geschwindigkeitseinheit des Trackers"
+        },
+        "data_description": {
+          "comment": "Freitext, der an die Positionsmeldung angehängt wird (max. 43 Zeichen).",
+          "symbol_table": "Ein Zeichen: '/' für die primäre oder '\\' für die alternative Tabelle.",
+          "symbol_code": "Ein Zeichen, das das Symbol bestimmt, z.B. '>' für Fahrzeug.",
+          "min_distance_m": "Sofort senden, wenn sich der Tracker mindestens so weit bewegt hat.",
+          "min_interval_s": "Nie zwei Meldungen mit kürzerem Abstand senden.",
+          "max_interval_s": "Letzte bekannte Position mindestens so oft senden, auch ohne Bewegung.",
+          "speed_unit": "Einheit des 'speed'-Attributs des Trackers. Home-Assistant-Tracker wie die Companion App verwenden m/s."
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "beaconing": {
+        "name": "Positionsmeldungen"
+      },
+      "send_speed_course": {
+        "name": "Geschwindigkeit und Kurs senden"
+      },
+      "send_altitude": {
+        "name": "Höhe senden"
+      }
+    },
+    "button": {
+      "send_now": {
+        "name": "Position jetzt senden"
+      }
+    }
+  },
+  "selector": {
+    "speed_unit": {
+      "options": {
+        "ms": "Meter pro Sekunde (Home-Assistant-Standard)",
+        "kmh": "Kilometer pro Stunde",
+        "kn": "Knoten",
+        "mph": "Meilen pro Stunde"
+      }
+    }
+  }
+}

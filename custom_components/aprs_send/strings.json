@@ -1,0 +1,100 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "APRS Position Sender",
+        "description": "Beacon the position of a device tracker to the APRS-IS network.",
+        "data": {
+          "callsign": "Callsign (with SSID)",
+          "passcode": "APRS-IS passcode",
+          "entity_id": "Device tracker",
+          "host": "APRS-IS server",
+          "port": "APRS-IS port",
+          "comment": "Comment",
+          "symbol_table": "Symbol table",
+          "symbol_code": "Symbol code",
+          "min_distance_m": "Minimum distance (m)",
+          "min_interval_s": "Minimum interval (s)",
+          "max_interval_s": "Heartbeat interval (s)",
+          "speed_unit": "Speed unit of the tracker"
+        },
+        "data_description": {
+          "callsign": "Your amateur radio callsign including SSID, e.g. HB9XX-9.",
+          "passcode": "Numeric APRS-IS passcode derived from your callsign.",
+          "entity_id": "Device tracker whose latitude/longitude will be sent.",
+          "comment": "Free text appended to the position report (max. 43 characters).",
+          "symbol_table": "Single character: '/' for the primary or '\\' for the alternate table.",
+          "symbol_code": "Single character selecting the icon, e.g. '>' for a car.",
+          "min_distance_m": "Send immediately when the tracker moved at least this far.",
+          "min_interval_s": "Never send two reports closer together than this.",
+          "max_interval_s": "Send the last known position at least this often, even without movement.",
+          "speed_unit": "Unit of the tracker's 'speed' attribute. Home Assistant trackers such as the Companion app use m/s."
+        }
+      }
+    },
+    "error": {
+      "invalid_callsign": "The callsign is not well-formed (e.g. HB9XX-9).",
+      "invalid_auth": "The passcode does not match the callsign.",
+      "cannot_connect": "Could not connect to the APRS-IS server.",
+      "unknown": "Unexpected error, see the log for details."
+    },
+    "abort": {
+      "already_configured": "This callsign is already configured for this device tracker."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "APRS Position Sender options",
+        "data": {
+          "host": "APRS-IS server",
+          "port": "APRS-IS port",
+          "comment": "Comment",
+          "symbol_table": "Symbol table",
+          "symbol_code": "Symbol code",
+          "min_distance_m": "Minimum distance (m)",
+          "min_interval_s": "Minimum interval (s)",
+          "max_interval_s": "Heartbeat interval (s)",
+          "speed_unit": "Speed unit of the tracker"
+        },
+        "data_description": {
+          "comment": "Free text appended to the position report (max. 43 characters).",
+          "symbol_table": "Single character: '/' for the primary or '\\' for the alternate table.",
+          "symbol_code": "Single character selecting the icon, e.g. '>' for a car.",
+          "min_distance_m": "Send immediately when the tracker moved at least this far.",
+          "min_interval_s": "Never send two reports closer together than this.",
+          "max_interval_s": "Send the last known position at least this often, even without movement.",
+          "speed_unit": "Unit of the tracker's 'speed' attribute. Home Assistant trackers such as the Companion app use m/s."
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "beaconing": {
+        "name": "Beaconing"
+      },
+      "send_speed_course": {
+        "name": "Send speed and course"
+      },
+      "send_altitude": {
+        "name": "Send altitude"
+      }
+    },
+    "button": {
+      "send_now": {
+        "name": "Send position now"
+      }
+    }
+  },
+  "selector": {
+    "speed_unit": {
+      "options": {
+        "ms": "Metres per second (Home Assistant default)",
+        "kmh": "Kilometres per hour",
+        "kn": "Knots",
+        "mph": "Miles per hour"
+      }
+    }
+  }
+}
