@@ -1,5 +1,10 @@
 # APRS Position Sender for Home Assistant
 
+> ⚠️ **For licensed amateur radio operators only.** APRS-IS is part of the
+> amateur radio service. Transmitting to it requires a valid amateur radio
+> licence, and you may only ever use your own callsign and passcode. This
+> project is by and for licensed hams — it is not a generic tracking tool.
+
 A Home Assistant custom integration that watches any `device_tracker` entity
 and beacons its position to the APRS-IS network as an uncompressed APRS
 position report. The station then shows up on [aprs.fi](https://aprs.fi) and
@@ -23,9 +28,6 @@ become an APRS station:
 
 Each config entry pairs one callsign with one tracker, so you can run several
 of them side by side, for example one for the car and one for the phone.
-
-> Transmitting to APRS-IS requires a valid amateur radio licence. Only use your
-> own callsign and passcode.
 
 ## Features
 
@@ -58,6 +60,9 @@ Manual alternative: copy `custom_components/aprs_send` into your
 `config/custom_components/` folder and restart.
 
 ## Setup
+
+> You need your own amateur radio callsign and its APRS-IS passcode. Do not
+> enter someone else's callsign or passcode.
 
 **Settings → Devices & Services → Add Integration → "APRS Position Sender"**
 
