@@ -9,5 +9,5 @@
   "iot_class": "cloud_push",
   "issue_tracker": "https://github.com/HB9DUT/HAtoAPRS/issues",
   "requirements": ["aprslib==0.7.2"],
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
