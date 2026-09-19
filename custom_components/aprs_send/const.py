@@ -20,7 +20,7 @@ CONF_MAX_INTERVAL_S: Final = "max_interval_s"
 
 DEFAULT_HOST: Final = "rotate.aprs2.net"
 DEFAULT_PORT: Final = 14580
-DEFAULT_COMMENT: Final = ""
+DEFAULT_COMMENT: Final = "via HAtoAPRS"
 DEFAULT_SYMBOL_TABLE: Final = "/"
 DEFAULT_SYMBOL_CODE: Final = ">"
 DEFAULT_MIN_DISTANCE_M: Final = 100
