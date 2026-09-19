@@ -14,6 +14,7 @@ from pytest_homeassistant_custom_component.common import (
 
 from custom_components.aprs_send.const import (
     CONF_CALLSIGN,
+    CONF_COMMENT,
     CONF_ENTITY_ID,
     CONF_HOST,
     CONF_MAX_INTERVAL_S,
@@ -50,6 +51,7 @@ def _entry() -> MockConfigEntry:
             CONF_ENTITY_ID: TRACKER,
             CONF_HOST: "rotate.aprs2.net",
             CONF_PORT: 14580,
+            CONF_COMMENT: "",
             CONF_MIN_DISTANCE_M: 100,
             CONF_MIN_INTERVAL_S: 30,
             CONF_MAX_INTERVAL_S: 600,
