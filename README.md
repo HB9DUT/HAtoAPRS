@@ -46,18 +46,26 @@ of them side by side, for example one for the car and one for the phone.
   ignoring the thresholds and the switch.
 - Multiple entries (different callsign/tracker pairs) can run in parallel.
 
-## Installation (HACS custom repository)
+## Installation
 
-This integration is not in the HACS default store.
+### HACS (recommended)
 
-1. In Home Assistant open **HACS → Integrations**.
-2. Open the three-dot menu (top right) → **Custom repositories**.
-3. Add `https://github.com/HB9DUT/HAtoAPRS`, category **Integration**.
-4. Search for **APRS Position Sender** in HACS and install it.
-5. Restart Home Assistant.
+1. In Home Assistant open **HACS**.
+2. Search for **APRS Position Sender** and install it.
+3. Restart Home Assistant.
 
-Manual alternative: copy `custom_components/aprs_send` into your
-`config/custom_components/` folder and restart.
+### HACS custom repository (fallback)
+
+If the integration does not show up in the HACS search yet:
+
+1. In HACS open the three-dot menu (top right) → **Custom repositories**.
+2. Add `https://github.com/HB9DUT/HAtoAPRS`, category **Integration**.
+3. Search for **APRS Position Sender** in HACS, install it and restart Home Assistant.
+
+### Manual
+
+Copy `custom_components/aprs_send` into your `config/custom_components/`
+folder and restart.
 
 ## Setup
 
